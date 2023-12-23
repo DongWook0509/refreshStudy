@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>함수</h2>
+    <h3>객체</h3>
+</body>
+<script>
+    /*     function send(){
+        alert('경고');
+    }
+
+    send(); */
+
+    var a = 10;
+    var b = 20;
+
+    function add(x,y) {
+        var sum = x + y; 
+        return sum;
+    }
+    var total = add(a,b);
+    document.write(total);
+
+    //객체 = 변수 + 함수
+    /*
+        var obj = new Object(); 첫번째방법
+        var obj = {}; 두번째 방버
+    */
+    /* 
+        var baby = {};
+        baby.age="2살";
+        baby.sex="남자";
+        baby.birthday="5월1일";
+
+        document.write(baby.age);
+        document.write(baby.birthday);
+    */
+
+   var baby = {
+    age : '2살',
+    sex : '남자',
+    birthday: '5월1일',
+    getAge:function(){
+        return this.age;
+    }
+   }
+   var age = baby.getAge();
+   //document.write(baby.age);
+   document.write(baby.birthday);
+   document.write(age);
+
+</script>
+</html>
