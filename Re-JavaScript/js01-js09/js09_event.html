@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid tenetur sapiente commodi aut a distinctio quaerat minima ducimus? Eaque ad ipsa dolorem saepe facilis in suscipit commodi minima, odio omnis.</p>
+        <button id="submit">Click me</button>
+    </div>
+</body>
+<script>
+    var btn = document.getElementById('submit'),
+        container = document.querySelector('.container');
+    //할일(함수) = function(){}
+
+    btn.addEventListener('click', function(){
+        btn.style.color = 'red';
+    });
+
+    container.addEventListener('mouseenter', function(){
+        console.log('마우스가 들어왔음');
+    });
+
+    container.addEventListener('mouseleave', function(){
+        console.log('마우스가 나갔음');
+    });
+
+    window.addEventListener('keydown', function(event){
+        console.log(event.key);
+        console.log(event.keyCode);
+    })
+</script>
+</html>

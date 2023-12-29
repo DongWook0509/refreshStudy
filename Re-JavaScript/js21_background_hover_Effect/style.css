@@ -1,0 +1,85 @@
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+    --red: firebrick;
+    --white: white;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    font: 22px/1.5 sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+/* MAIN STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%; /*줄어든 높이에 100%*/
+}
+
+.container a {
+    position: relative;
+    border-bottom: 2px dashed var(--red);
+}
+
+.container a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    min-height: 30px; /*최소 높이 지정*/
+    transform: translate(-50%, -50%) scaleX(0);
+    padding: 10px;
+    /*기준요소 밑에 깔리게 하려면 */
+    z-index: -1;
+    transform-origin: 50% 50%;
+    background: var(--white);
+    transition: all 0.3s;
+}
+
+.bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.3s ease-out;
+}
+
+.bg-show .bg {
+    opacity: 1;
+    z-index: 1;
+}
+
+.container a:hover {
+    z-index: 2;
+    border-bottom-color :transparent;
+    color : var(--red);
+}
+
+.container a:hover::before{
+    transform: translate(-50%, -50%) scaleX(1);
+}

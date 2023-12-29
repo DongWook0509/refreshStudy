@@ -1,0 +1,94 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialised;
+}
+
+body {
+    margin-top: 5em;
+    font: 20px/1.5 "Helvetica", Arial, sans-serif;
+}
+
+/* (1) 주목할 css */
+.container {
+    position: relative;
+    width: 100%;	
+	overflow: hidden;	
+}
+
+/* (1) 주목할 css */
+.slider-container {
+    position: absolute;
+	width:100%;
+}
+
+/* (1) 주목할 css */
+.slide {
+	position: absolute;
+	width: 100%;
+	padding:0 10%;
+	box-sizing:border-box;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	overflow: hidden;
+}
+
+/* (2) 주목할 css animated라는 클래스가 생기면 */
+
+.slider-container.animated {
+	-webkit-transition: left .3s ease-in;
+	transition: left .3s ease-in;
+}
+
+blockquote {
+    color: #636363;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 1.5em;
+}
+
+cite {
+    font-size: .75em;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Utility */
+.simple-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nav  (3) 주목할 css */
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+	left:50%;
+    transform: translateY(-50%);
+    z-index: 999999;
+    display: inline-block;
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+/*(4) 주목할 css*/
+#prev.disabled, #next.disabled { display:none;}
+/*margin을 이용해서 실제 공간을 조절 */
+#prev { background-image: url('arrow-left-out.svg'); margin-left:-480px;}
+
+#prev:hover { background-image: url('arrow-left-over.svg'); }
+/*margin을 이용해서 실제 공간을 조절 */
+#next {
+    margin-left:380px;
+    background-image: url('arrow-right-out.svg');
+	
+}
+
+#next:hover { background-image: url('arrow-right-over.svg'); }

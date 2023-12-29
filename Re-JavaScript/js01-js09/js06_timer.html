@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>문자열</h2>
+</body>
+<script>
+   
+    //1. charAt
+    //var n = str.charAt(2);
+    
+    //2. contact
+    //var newStr = str.concat(str1);
+    //console.log(newStr);
+
+    //3. indexOf (공백도 번호에 침)
+    //문자열의 특정단어의 인덱스 번호를 찾는방법
+    //만약에 'world'가 없으면 -1이 찍힙니다. 
+    var str = 'hello world';
+    var str1 = 'javascript'
+    var str2 = str.indexOf('world');
+    console.log(str2);
+
+    //타이머 
+    //4. setTimeout(할일, 시간);
+    //시간이 지나면 할일 = 함수 
+    //할일 = function(){ 실제로 할일 }
+    //3초 = 3000
+    //실제로 할일 = alert('힘들죠');
+
+    //setTimeout(function(){alert('화이팅');}, 3000);
+
+    //5.clearTimeout(할일의 이름)
+    var timer = setTimeout(function(){alert('화이팅');}, 3000);
+    clearTimeout(timer);
+
+    //6.setInterval(할일, 시간);
+    setInterval(function(){ alert('안녕하세요'); }, 3000);
+
+</script>
+</html>

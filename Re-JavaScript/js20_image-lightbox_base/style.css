@@ -1,0 +1,68 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialised;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.gallery {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.gallery li {
+    float: left;
+    width: 48%;
+    margin: 1%;
+}
+
+.gallery li img {
+    transition: opacity .3s ease-in-out;
+}
+
+.gallery li img:hover {
+    opacity: .75;
+}
+
+/*주목할 css (1)
+ 화면을 다 채워야 하니까 width : 100%, height 100% 
+ position은 fixed입니다.  
+ background-color: rgba(29, 31, 33, .95);
+ opactiy : 0 에서 1로 해서 보여줌 
+ 링크를 막아놓다가 풀어 주세요 
+*/
+#lightbox-overlay {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(29, 31, 33, .95);
+    transition: opacity .3s ease-in;
+}
+
+/*주목할 css(2)
+  visible이라는 함수가 있다면요
+*/
+#lightbox-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#lightbox-image {
+    max-height: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    background: transparent url("images/loading.gif") 50% 50% no-repeat;
+    text-indent: -99999px;
+}

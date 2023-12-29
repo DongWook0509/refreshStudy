@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Basic Selector</title>
+</head>
+
+<body>
+  <h1 id="title">Javascript Basic Selector</h1>
+  <div class="container">
+	<ul id="list1" class="list">
+		<li>li 1</li>
+		<li>li 2</li>
+		<li>li 3</li>
+		<li>li 4</li>
+		<li>li 5</li>
+	</ul>
+</div>
+<div class="container">
+	<ul id="list2" class="list">
+		<li>li 1</li>
+		<li>li 2</li>
+		<li>li 3</li>
+		<li>li 4</li>
+		<li>li 5</li>
+	</ul>
+</div>
+<div class="container">
+	<ul id="list3" class="list">
+		<li class="red" name="red">li 1</li>
+		<li>li 2</li>
+		<li>li 3</li>
+		<li>li 4</li>
+		<li id="list3_5">li 5</li>
+		<li>li 6</li>
+	</ul>
+</div>
+
+<div class="container">
+	<div id="box">
+		box level1
+		<div>
+			box level2
+			<div>
+				box level3
+			</div>
+		</div>
+	</div>
+</div>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+</p>
+</body>
+<script>
+	var firstTitle = document.getElementById('title'),
+		myList = document.getElementsByClassName('list'),
+		paragraphs = document.getElementsByTagName('p'),
+		myList2 = document.querySelector('.list .red');
+	console.log(firstTitle);
+	console.log(myList);
+	console.log(paragraphs);
+
+	//document.getElementById('title').style.color =  'red';
+	//변수명을 사용하면 일을 시킬때 빨라짐 
+	firstTitle.style.color = 'blue';
+
+	//배열안에 값을 [i] 해서 뽑아야 합니다. 
+	console.log(myList);
+	myList[0].style.display = 'none';
+	//paragraphs[0].style.color = 'red';
+
+	/*
+	for(시작;끝;증감){
+		반복될 일
+	}
+	*/
+	for(var i=0;i<=paragraphs.length;i++){
+		paragraphs[i].style.color = 'blue';
+	}
+
+	
+</script>
+</html>

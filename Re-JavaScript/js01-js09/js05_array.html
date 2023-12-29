@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2></h2>
+</body>
+<script>
+    /*
+        배열 만들기 
+        var arr = [];
+        var arr = new Array();
+
+        배열은 0 = 첫번째
+    */
+
+    /* var arr = []; */
+    var fruits = [];
+    fruits[0] = '사과';
+    fruits[1] = '배';
+    fruits[2] = '바나나';
+    fruits[3] = '딸기';
+
+    document.write(fruits + '<br/>');
+
+    /* var arr = new Array(); */
+    var player = ['조원희', '차범근' ,'박지성'];
+    document.write(player + '<br/>');
+    
+    //(1) length (갯수구하기)
+    var amount = player.length;
+    document.write(amount + '<br/>');
+
+    //(2) / 붙이기 
+    var newStr = player.join('/');
+    document.write(newStr + '<br/>');
+
+    //(3) reverse
+    var newArr1 = player.reverse();
+    document.write(newArr1 + '<br/>');
+
+    //(4) sort
+    var newArr2 = player.sort();
+    document.write(newArr2 + '<br/>');
+
+    //(5) contact
+    var newArr3 = fruits.concat(player);
+    document.write(newArr3 + '<br/>');
+    
+    //(6) slice
+    // 원본유지, 1번째 부터 3번째 이전
+    // 인덱스가 3번까지가 아니고, 3번 앞에서 사른다.
+    // 즉 1,2가 채택 
+    var newArr4 = fruits.slice(1,3);
+    document.write(newArr4 + '<br/>');
+
+    //(7) splice 
+    // 원본손상, 1번째 부터 3번째 이전
+    // 원본을 자른다
+    var newArr5 = fruits.splice(1,3);
+    document.write(newArr5 + '<br/>'); 
+
+    //(8) 값 추가하기 - push
+    //기존의 값 뒤에 추가합니다.
+    var beers = ['하이네켄','코로나','스텔라','카스'];
+    beers.push('수제맥주', '제주비어');
+    document.write(beers + '<br/>');
+
+    //(9) 값 추가하기 - unshift
+    //기존의 값 앞에 추가합니다.
+    var beers = ['하이네켄','코로나','스텔라','카스'];
+    beers.unshift('수제맥주', '제주비어');
+    document.write(beers + '<br/>');
+
+    //(10) 값 삭제하기 - pop
+    //기존의 값 뒤에  삭제한다.
+    var beers = ['하이네켄','코로나','스텔라','카스'];
+    beers.pop();
+    document.write(beers + '<br/>');
+
+    //(11) 값 삭제하기 - shift
+    //기존의 맨 앞에 삭제한다.
+    var beers = ['하이네켄','코로나','스텔라','카스'];
+    beers.shift();
+    document.write(beers + '<br/>');
+
+</script>
+</html>
