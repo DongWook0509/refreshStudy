@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BASE - multiple slide loop</title>
+	<link rel="stylesheet" href="./style.css">
+	<title>Number Animation</title>
+	<style>
+		.progress_wrap {
+			position: relative;
+			width: 800px;
+			margin: 20px auto;
+			height: 25px;
+			border-radius: 13px;
+			border: 1px solid #3498db;
+			box-sizing: border-box;
+		}
+		.bar {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 0;
+			background: #3498db;
+			border-radius: 13px;
+			height: 24px;
+		}
+		.progress_wrap span {
+			position: absolute;
+			right: 20px;
+			top:0;
+			bottom: 0;
+			line-height: 24px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1><a href="#">Number Animation</a></h1>
+	<h2>과연</h2>
+	<div class="progress_wrap" data-num = "45">
+		<div class="bar"></div>
+		<span>0</span>
+	</div>
+	<div class="progress_wrap" data-num = "85">
+		<div class="bar"></div>
+		<span>0</span>
+	</div>
+	<div class="progress_wrap" data-num = "30">
+		<div class="bar"></div>
+		<span>0</span>
+	</div>
+
+	<script>
+		let progressWrap = document.querySelectorAll('.progress_wrap');
+
+		progressWrap.forEach(item=>{
+			numAnimation(item);
+		})
+
+		function numAnimation(item){
+			let initalRate = 0;
+			let targetRate = item.getAttribute('data-num');
+			let progressBar = item.querySelector('.bar');
+			let progressRate = item.querySelector('span');
+
+			let numAnim = setInterval(()=>{
+				initalRate++;
+				if(initalRate == targetRate){
+					clearInterval(numAnim);
+				}
+				progressBar.style.width = `${initalRate}%`; //num + '%'
+				progressRate.innerText = `${initalRate}%`
+			}, 20);
+		}
+
+		/* 
+		let progressWrap = document.querySelectorAll('.progress_wrap');
+
+		progressWrap.forEach(function(item,index){
+			numAnimation(index);
+		})
+
+		function numAnimation(idx){
+			let initalRate = 0;
+			let targetRate = progressWrap[idx].getAttribute('data-num');
+			let	progressBar = progressWrap[idx].querySelector('.bar');
+			let	progressRate = progressWrap[idx].querySelector('span');
+
+			let numAnim = setInterval(function(){
+				initalRate++;
+				if(initalRate == targetRate){
+					clearInterval(numAnim);
+				}
+				progressBar.style.width = `${initalRate}%`;
+				progressRate.innerText = `${initalRate}%`;
+			}, 20);
+		} */
+
+
+
+	</script>
+</body>
+
+</html>

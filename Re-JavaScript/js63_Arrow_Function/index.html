@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BASE - multiple slide loop</title>
+	<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+	<h1>Arrow Function</h1>
+	<pre>
+	</pre>
+
+	<script>
+		//이름이 있으니까 add라는 함수에 일을 시키면 결과가 나오지만
+		function add(x,y){
+			return x + y;
+		}
+		var add
+		document.write(add(3,4));
+
+		document.write('<hr>');
+
+		//이렇게만 되어있다고 하면 ...? 
+		var add2 = function(x,y){
+			return x + y;
+		}
+		document.write(add2(3,5));
+
+		//화살표로 줄임 
+		document.write('<hr>'); 
+		var add3 = (x,y) => { return x + y ; }
+		document.write(add3(3,9));
+
+		//조금 더 줄임 (줄괄호도 줄임 )
+		document.write('<hr>'); 
+		var add4 = (x,y) => x + y;
+		document.write(add4(3,5));
+
+		//함수안에 함수 
+		document.write('<hr>'); 
+		function add5(num) {
+			return function(value){
+				return num + value
+			}
+		}
+
+		var add5 = num => value => num + value;
+		var result1 = add5(2);
+		var reulst2 = result1(4);
+		document.write(reulst2);
+
+		togglebtn.addEventListener('click', function(){
+			this.style.color ='red';
+		})
+
+		togglebtn.addEventListener('click', ()=>{
+			this.style.color ='red';
+		})
+	</script>
+</body>
+
+</html>

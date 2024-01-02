@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BASE - multiple slide loop</title>
+	<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+	<h1>let</h1>
+	<pre>
+		let 
+		{} scope 범위안에서만 활용할 변수 생성
+	</pre>
+	<pre>
+		const 상수 
+		변할수 없는 값 지정
+	</pre>
+
+	<script>
+		//변수 함수 끌올 hoisting 
+		
+		/* 
+		ES5
+		var lang = 'html'
+
+		function learnWeb(code){
+			//var lang -> 변수명은 쓸 수 있지만 값은 지정되어있지 않았습니다. 이렇게 끌어올려졌습니다. 
+			if(code){
+				var lang = '기초언어';
+				return lang;
+			}
+			return lang;
+		}
+		*/
+
+		//ES6
+		let lang = 'html';
+		function learnWeb(code){
+			if(code){
+				let lang = '기초언어';
+				return lang;
+			}
+			return lang;
+		}
+		
+		document.write(learnWeb(true));
+
+		
+	</script>
+</body>
+
+</html>

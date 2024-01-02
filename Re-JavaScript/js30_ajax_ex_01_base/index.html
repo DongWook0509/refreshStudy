@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<p id="demo">Let AJAX change this text.</p>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+<script>
+function loadDoc() {
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function(){
+    //requestState가 4이면 request 요청에 대한 처리가 끝났고, 브라우저로 보낼반응이 준비됨
+    console.log(this.readyState); //4면 이상없음
+    console.log(this.status); //200 이상없음
+    if(this.readyState == 4 && this.status == 200){
+      //responseText : 요청후의 결과를 반환한다 (함수 밖으로 출력한다.);
+      document.getElementById('demo').innerHTML =  this.responseText //요청한것에 대한 반응
+      //A.innerHTML = B , A.html(B)
+    }
+  } //onreadystatechange
+  xhttp.open('get', 'ajax_info.txt', true);
+  xhttp.send();
+
+} // loadDoc
+</script>
+
+</body>
+</html>

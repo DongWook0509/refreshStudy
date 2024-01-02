@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BASE - multiple slide loop</title>
+	<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+	<h1>Template String - 템플릿 문자열</h1>
+	<div id="target"></div>
+	<script>
+		var string1 = 'hello';
+		var string2 = 'world';
+		//ES5 : var greeting = string1 + ' '  + string2;
+		//ES6 : var gretting = `${string1} ${string2}`
+		var gretting = `${string1} ${string2}`
+		document.write('<br>' + gretting);
+
+		var product = {name : '도시', price : '30.000원'};
+		//product.name 
+		//ES5 : var msg = '제품' + product.name +' 의 가격은' + product.price + ' 입니다.';
+		//ES6 : `제품 ${product.name}의 가격은 ${product.price} 입니다.` 
+		//ES6 : `제품 ${product.name}의 가격은 ${product.price} 입니다.` 
+		var msg = `제품 ${product.name}의 가격은 ${product.price} 입니다.` 
+
+
+		document.write('<br>' + msg);
+
+		//ES5 다음줄로 넘기기 \n 
+		//ES5 var multiLine = '문자열1\n문자열2';
+		//ES6 var multiLine = '문자열1\n문자열2';
+
+		var multiLine = `문자열1
+		문자열2`;
+		document.write('<br>' + multiLine);
+		document.getElementById('target').innerText = multiLine;
+
+		var var1 = 1;
+		var var2 = 2;
+		var boolval = false;
+		//ES5 var result1 = '곱셉의 결과는 ' + (var1 + var2) + '입니다';
+		//ES6 var result1 = `곱셉의 결과는 ${var1 + var2} 입니다`;
+		var result1 = `곱셉의 결과는 ${var1 + var2} 입니다`;
+		
+		var result2 = (boolval ? '참' : '거짓') ;
+		//ES5 var result2 = (boolval ? '참' : '거짓') ;
+		var result2 = `불리언의 값은 ${boolval ? '참' : '거짓'} 입니다.` ;
+		var result2 = `불리언의 값은 ${boolval ? '참' : '거짓'} 입니다.` ;
+		document.write('<br>' + result1);
+		document.write('<br>' + result2);
+
+		//booval ? document.write('참') : document.write('거짓');
+
+
+	</script>
+</body>
+
+</html>

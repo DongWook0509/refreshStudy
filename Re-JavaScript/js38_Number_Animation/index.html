@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript for Web Designers - Simple image lightbox demo</title>
+    <style>
+        .num_animation {
+            width: 100px;
+            padding: 20px;
+            font-size: 3em;
+            margin: 0 auto;
+            border: 1px solid;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="num_animation" data-rate="1000">0</div>
+    <div class="num_animation" data-rate="60">0</div>
+    <div class="num_animation" data-rate="40">0</div>
+    <script>
+        /*
+        var numAnimation = document.querySelectorAll('.num_animation'),
+            targetNum = numAnimation.getAttribute('data-rate'),
+            num = 0;
+
+        function changeNum(){
+                //numAnimation.innerText = 1;
+                var timer = setInterval(function(){
+                ++num;
+                //numAnimation.innerText = num;
+                numAnimation.innerHTML = '<a>' + num + '</a>';
+                if(num == targetNum){
+                    clearInterval(timer);
+                }
+            }, 10);
+        }
+        */
+
+        var numAnimation = document.querySelectorAll('.num_animation');
+
+        console.log(numAnimation);
+
+        function changeNum(idx){
+            var num = 0;
+            var targetNum = numAnimation[idx].getAttribute('data-rate');
+            
+            //속도조절
+            var intervalTime = 10;
+            if (targetNum > 500) {
+                intervalTime = 1;
+            }
+            
+            var timer = setInterval(function(){
+                ++num;
+                numAnimation[idx].innerText = num;
+                if(num == targetNum){
+                    clearInterval(timer);
+                }
+            }, intervalTime);
+        }
+
+        for(var i =0; i < numAnimation.length; i++){
+            changeNum(i);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BASE - multiple slide loop</title>
+	<link rel="stylesheet" href="./style.css">
+	<title>Number Animation</title>
+	<style>
+		.progress_wrap {
+			position: relative;
+			width: 800px;
+			margin: 20px auto;
+			height: 25px;
+			border-radius: 13px;
+			border: 1px solid #3498db;
+			box-sizing: border-box;
+		}
+		.bar {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 0;
+			background: #3498db;
+			border-radius: 13px;
+			height: 24px;
+		}
+		.progress_wrap span {
+			position: absolute;
+			right: 20px;
+			top:0;
+			bottom: 0;
+			line-height: 24px;
+		}
+		section {
+			height: 1000px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+
+<body>
+	<h1><a href="#">Number Animation</a></h1>
+	<h2>스크롤이 생길때 한번만 발동하게 끔!</h2>
+	<section></section>
+	<div class="progress_wrap" data-num = "45">
+		<div class="bar"></div>
+		<span>0</span>
+	</div>
+	<section></section>
+	<script>
+		let progress_wrap = document.querySelector('.progress_wrap'),
+			progressBar   = document.querySelector('.bar'),
+			progressRate  = document.querySelector('span'),
+			initalRate    = 0,
+			targetRate    = parseInt(progress_wrap.getAttribute('data-num')),
+			triggerPoint  = progress_wrap.offsetTop - 400,
+			numAnimation  = null,
+			excuted = false; //실행여부 거짓 
+
+		//[1] 요소의 내용을 확인 (반환)
+		//    대상 let a = b.innerText;
+		console.log(document.querySelector('h1').innerText); 
+		console.log(document.querySelector('h1').innerHTML);
+
+		//[2] 요소의 내용을 변경 (지정)
+		//	  글씨를 변경 b.innerText = '새값';
+		//	  tag로 변경 b.innerHTML = '새값';
+
+		document.querySelector('h2').innerText = 'title'
+		document.querySelector('h2').innerHTML = '<a href="#">title</a>'
+		
+		window.addEventListener('scroll', function(){
+			let scrollAmt = this.pageYOffset;
+			if(scrollAmt > triggerPoint){
+				if(!excuted){
+					startNumberAnimation();
+					excuted = true;
+				}
+			}
+		});
+
+		/* 	function startNumberAnimation(){
+			if(numAnimation == null){
+				numAnimation = setInterval(function(){
+				initalRate++;
+				if(initalRate == targetRate){
+					clearInterval(numAnimation);
+				}
+				progressBar.style.width = `${initalRate}%`;
+				progressRate.innerText = `${initalRate}%`;
+			}, 20);
+			}
+		} */
+
+
+		function startNumberAnimation(){
+			//if(numAnimation == null){
+				numAnimation = setInterval(function(){
+				initalRate++;
+				if(initalRate == targetRate){
+					clearInterval(numAnimation);
+				}
+				progressBar.style.width = `${initalRate}%`;
+				progressRate.innerText = `${initalRate}%`;
+			}, 20);
+			//}
+		}
+
+
+	</script>
+</body>
+
+</html>
